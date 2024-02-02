@@ -1,3 +1,4 @@
+use rand::seq::SliceRandom;
 use std::io;
 use std::io::Write;
 // Program that takes in names, then picks a random winner
@@ -39,8 +40,10 @@ fn main() {
         names.push(name);
     }
 
-    print!("Hello world!");
-
     // select random in vector
-    // print, "The winner is... {}"
+    let result: Option<&&String> = names.choose(&mut rand::thread_rng());
+    match result {
+        Some(name) => println!("The winner is... {}", name),
+        None => println!("There are no names."),
+    }
 }
