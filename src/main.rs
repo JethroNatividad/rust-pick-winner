@@ -41,7 +41,7 @@ fn main() {
     }
 
     // select random in vector
-    let result: Option<&&String> = names.choose(&mut rand::thread_rng());
+    let result: Option<&String> = names.choose(&mut rand::thread_rng());
     match result {
         Some(name) => println!("The winner is... {}", name),
         None => println!("There are no names."),
