@@ -31,9 +31,15 @@ fn main() {
         // get input_name
         let name: String = get_input("Enter a name: ");
         // if input is blank, stop loop.
+        if name == "" {
+            break;
+        }
 
         // if not blank, push to vector.
+        names.push(name);
     }
+
+    print!("Hello world!");
 
     // select random in vector
     // print, "The winner is... {}"
